@@ -9,7 +9,7 @@ import Component3 from './components/Component3';
     showComponent3 : false
   }
 
-   toggle = e => this.setState({showComponent3: !this.state.showComponent3})
+  toggle = e => this.setState({showComponent3: !this.state.showComponent3})
 
  render(){
   return (
