@@ -1,4 +1,4 @@
-import {useSpring, Spring, animated, config} from 'react-spring'
+import {useSpring, animated, config} from 'react-spring'
 import React, { useState } from 'react'
 
 const Component1 = () => {
