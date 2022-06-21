@@ -5,7 +5,9 @@ const Component2 = () => {
 	const props = useSpring({
 		to: {opacity: 1}, 
 		from: {opacity: 0},
-		delay: 3000})
+		delay: 2000, 
+		duration: 2000
+	})
   return (
 	<animated.div style = {props}>
 		<div style={c1Style}>
