@@ -3,9 +3,10 @@ import './App.css';
 import Component1 from './components/Component1';
 import Component2 from './components/Component2';
 import Component3 from './components/Component3';
+import {Transition, animated} from 'react-spring'
 
  export class App extends Component {
-  state = {
+ state = {
     showComponent3 : false
   }
 
@@ -16,7 +17,20 @@ import Component3 from './components/Component3';
     <div className="App">
      <Component1/>
      <Component2 toggle = {this.toggle}/>
-     <Component3/>
+     <Transition
+        items={this.state.showComponent3}
+        from= {{opacity: 0}}
+        enter = {{opacity: 1}}
+        leave = {{opacity: 0}}
+     >
+
+      {(show, item) => item && <animated.div style = {show}><Component3/></animated.div>} 
+      {/* {show => show && (props =>(
+        <animated.div style = {props}>
+          <Component3/>
+        </animated.div>
+      ))} */}
+     </Transition>
     </div>
   );
 }
